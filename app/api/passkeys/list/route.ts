@@ -22,7 +22,8 @@ export async function GET(
 
         db.data.sessions.push({
             uid: uuidv4(),
-            username: decodedJwt.username
+            username: decodedJwt.username,
+            token: jwtAccess
         });
         db.write();
 

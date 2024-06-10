@@ -1,4 +1,4 @@
-import { JSONFileSyncPreset } from 'lowdb/node'
+import { JSONFileSyncPreset } from "lowdb/node"
 
 export interface Session {
     uid: string;
@@ -20,4 +20,4 @@ const defaultData: Data = {
     users: []
 }
 
-export default JSONFileSyncPreset<Data>('db.json', defaultData);
+export default JSONFileSyncPreset<Data>("db.json", defaultData);

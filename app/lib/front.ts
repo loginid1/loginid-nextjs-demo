@@ -1,8 +1,8 @@
 export async function submitLoginToken(jwtAccess: string) {
-    const authenticationResult = await fetch('/api/login/validate', {
-        method: 'POST',
+    const authenticationResult = await fetch("/api/login/validate", {
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
         },
         body: JSON.stringify({ jwtAccess }),
     });
@@ -13,10 +13,10 @@ export async function submitLoginToken(jwtAccess: string) {
 }
 
 export async function submitRegisterToken(jwtAccess: string) {
-    const authenticationResult = await fetch('/api/register/validate', {
-        method: 'POST',
+    const authenticationResult = await fetch("/api/register/validate", {
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
         },
         body: JSON.stringify({ jwtAccess }),
     });
