@@ -16,7 +16,7 @@ export async function POST(
 
     try {
         const decodedJwt = jwt.decode(jwtAccess);
-        loginidValidateJwt(jwtAccess, decodedJwt.iss);
+        loginidValidateJwt(jwtAccess);
 
         const user = db.data.users.find(user => user.username === decodedJwt.username);
         if (!user) {

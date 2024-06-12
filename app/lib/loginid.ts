@@ -1,11 +1,23 @@
+import { default as jwt } from "jsonwebtoken"
+
 const keyid = process.env.API_KEY
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
 
-export async function loginidValidateJwt(jwtAccess: string, iss: string) {
+export async function loginidValidateJwt(jwtAccess: string) {
+    const decodedJwt = jwt.decode(jwtAccess);
+    if (!decodedJwt) {
+        throw new Error("Failed to decode JWT token");
+    }
+
+    if (decodedJwt.iss !== baseUrl) {
+        throw new Error("Invalid JWT token issuer");
+    }
+    
+    // Encoding basic authorization
     const encodedCredential = Buffer.from(keyid + ":").toString("base64");
 
-    // TODO fix baseUrl and verify
-    const response = await fetch(baseUrl + "/fido2/v2/mgmt/token/verify", {
+    // We can obtaine the verify endpoint from the decoded JWT token, using the iss and verify fields
+    const response = await fetch(decodedJwt.iss + decodedJwt.verify, {
         method: "POST",
         headers: {
             "Authorization": "Basic " + encodedCredential,

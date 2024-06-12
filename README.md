@@ -10,7 +10,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Setup
 
-1. Register LoginID account https://dashboard.dev.loginid.io/login
+1. Register LoginID account https://dashboard.loginid.io/login
 2. Login to dashboard, and create new application
 3. Once you have created application, navigated to the settings and add new application key.
 4. Copy BaseURL, AppID, and newly created KeyID into the `.env`
