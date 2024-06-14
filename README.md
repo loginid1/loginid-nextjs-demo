@@ -17,3 +17,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 5. Run app with `npm run dev`
 
 Note: If you are having CORS issues, check dashboard, and ensure that allowed origins contain your application origin, including protocol, and port (e.g. http://localhost:3000)
+
+## License
+
+This project is under Apache 2.0. See [LICENSE.md](./LICENSE.md)
