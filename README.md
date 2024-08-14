@@ -10,9 +10,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Setup
 
-1. Register LoginID account https://dashboard.loginid.io/login
+1. Register LoginID account https://dashboard.loginid.io/register
 2. Login to dashboard, and create new application
 3. Once you have created application, navigated to the settings and add new application key.
+3. b. Make sure that `Registration Requires Authentication Token` is disabled.
 4. Copy BaseURL, AppID, and newly created KeyID into the `.env`
 5. Run app with `npm run dev`
 
